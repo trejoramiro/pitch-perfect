@@ -30,10 +30,7 @@ class PlaySoundsViewController: UIViewController {
     @IBOutlet weak var stopButton: UIButton!
     
 
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupAudio()
+    func setupLayout() {
         snailButton.imageView?.contentMode = UIViewContentMode.scaleAspectFit
         chipmunkButton.imageView?.contentMode = UIViewContentMode.scaleAspectFit
         rabbitButton.imageView?.contentMode = UIViewContentMode.scaleAspectFit
@@ -41,6 +38,12 @@ class PlaySoundsViewController: UIViewController {
         echoButton.imageView?.contentMode = UIViewContentMode.scaleAspectFit
         reverbButton.imageView?.contentMode = UIViewContentMode.scaleAspectFit
         stopButton.imageView?.contentMode = UIViewContentMode.scaleAspectFit
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupAudio()
+        setupLayout()
         // Do any additional setup after loading the view.
     }
     
@@ -72,16 +75,5 @@ class PlaySoundsViewController: UIViewController {
     @IBAction func stopButtonPressed(_ sender: AnyObject) {
         stopAudio()
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
